@@ -1,4 +1,4 @@
-package common
+package errors
 
 import (
 	"database/sql"
@@ -29,7 +29,7 @@ type Error struct {
 
 // Error implementa a interface error
 func (e *Error) Error() string {
-	return fmt.Sprintf("[%s] %s", e.Code, e.Msg)
+	return fmt.Sprintf("%s [%s]", e.Msg, e.Code)
 }
 
 // NewErr cria um novo erro customizado
