@@ -78,7 +78,7 @@ func TestHandling(t *testing.T) {
 
 		assert.Equal(t, http.StatusBadRequest, rec.Code)
 		assert.Contains(t, rec.Body.String(), `"code":"bad_request"`)
-		assert.Contains(t, rec.Body.String(), `"message":"[bad_request] erro simulado"`)
+		assert.Contains(t, rec.Body.String(), `"message":"erro simulado [bad_request]"`)
 	})
 
 	t.Run("deve incluir RID na mensagem se presente no contexto", func(t *testing.T) {
@@ -95,6 +95,6 @@ func TestHandling(t *testing.T) {
 		rec := httptest.NewRecorder()
 		router.ServeHTTP(rec, req)
 
-		assert.Contains(t, rec.Body.String(), `"message":"[internal_error] problema sério [abc123]"`)
+		assert.Contains(t, rec.Body.String(), `"message":"problema sério [internal_error] [abc123]"`)
 	})
 }
