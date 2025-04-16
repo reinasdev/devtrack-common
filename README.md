@@ -1,16 +1,14 @@
-# DevTrack - Common
+# devtrack-common
 
-Este repositório contém bibliotecas e utilitários compartilhados para o projeto DevTrack, incluindo:
+Este repositório contém utilitários, contratos e ferramentas compartilhadas entre os microsserviços do projeto DevTrack.
 
-- Configurações e variáveis de ambiente
-- Logger estruturado
-- Conexões de banco de dados (PostgreSQL, Redis)
-- Modelos de eventos para mensageria (Kafka, NATS)
-- Middlewares e outras bibliotecas auxiliares
+## Estrutura
 
-## Estrutura do Repositório
+- `logger`: Configurações e utilitários de logging
+- `config`: Carregamento e validação de configurações
+- `events`: Definição de eventos utilizados na comunicação entre microsserviços
+- `docs`: Documentação geral do projeto, incluindo o roadmap
 
-- `config/`: Configurações e arquivos de ambiente.
-- `pkg/`: Bibliotecas exportáveis.
-- `api/`: Protos ou especificações OpenAPI.
-- `test/`: Testes integrados e mocks.
+## Como usar
+
+Este repositório deve ser adicionado como dependência nos microsserviços que precisarem dessas funcionalidades comuns.
